@@ -1,0 +1,512 @@
+<html class="no_menu js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths wf-opensans-n3-active wf-opensans-i3-active wf-opensans-n4-active wf-opensans-i4-active wf-opensans-n6-active wf-opensans-i6-active wf-opensans-n7-active wf-opensans-i7-active wf-opensans-n8-active wf-opensans-i8-active wf-economica-n4-active wf-economica-i4-active wf-economica-n7-active wf-economica-i7-active wf-active" lang="en" style=""><head>
+	
+		
+			
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+	<title>MultiPay</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Webflow">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="/MBNK_dev/static/components/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/MBNK_dev/static/components/normalize.css/normalize.css?v=1.4.0-SNAPSHOT">
+
+		    <link rel="stylesheet" type="text/css" href="/MBNK_dev/static/css/redesign_login.css?v=1.4.0-SNAPSHOT">
+
+    <script src="/MBNK_dev/static/components/webfontloader/webfontloader.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic%7CEconomica:regular,italic,700,700italic&amp;subset=latin-ext,latin"><script>
+        WebFont.load({
+            google: {
+                families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic", "Economica:regular,italic,700,700italic:latin-ext,latin"]
+            }
+        });
+    </script>
+    <script type="text/javascript" src="/MBNK_dev/static/components/modernizr/modernizr.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" sizes="128x128" href="/MBNK_dev/static/images/android_128.png">
+    <link rel="shortcut icon" type="image/x-icon" sizes="192x192" href="/MBNK_dev/static/images/android_192.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/MBNK_dev/static/images/favicon.ico">
+
+    <link rel="apple-touch-icon" href="/MBNK_dev/static/images/touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/MBNK_dev/static/images/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/MBNK_dev/static/images/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/MBNK_dev/static/images/touch-icon-ipad-retina.png">
+
+        </head>
+	<body class="login_logout">
+        <script>
+            var context = '/MBNK_dev';
+            if (window.sessionStorage.tabId) {
+                window.tabId = window.sessionStorage.tabId;
+                window.sessionStorage.removeItem("tabId");
+            } else {
+                window.tabId = Math.floor(Math.random() * 1000000);
+            }
+            document.cookie = "tabId=" + window.tabId+ ";secure=true;path=" + context;
+        </script>
+		
+<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+
+	<div id="messages" class="fixed_messages hidden-print" data-role="message_container">
+    		</div>
+	
+	
+<div class="login_logout_container clearfix container-fluid ">
+    <img class="logo" src="/MBNK_dev/static/images/multipay_logo.svg">
+
+    <div class="form clearfix">
+    	<h1>Welcome</h1>
+        <div class="login_form clearfix">
+            <div id="login_container">
+                <div id="loginContainer" class="login_container">
+             <div class="tabbable tabs-left loginbox clearfix hidden-print" role="tabpanel">
+                <ul class="nav  nav-tabs clearfix login-menu-wrapper" role="tablist">
+                                            <li role="presentation" class="tab active backbutton ">
+    
+    <a aria-expanded="true" role="tab" data-toggle="tab" data-target="#nexuscertificate" href="#nexuscertificate">
+                                            <img src="/MBNK_dev/static/images/login_ico.svg" )"="" width="30">
+        <div>Certificate</div>
+    
+            </a>
+</li>
+                                        <li role="presentation" class="tab  ">
+    
+    <a aria-expanded="false" role="tab" data-toggle="tab" data-target="#cloudcertificate" href="#cloudcertificate">
+                                            <img src="/MBNK_dev/static/images/oneID_ico.svg" )"="" width="40">
+        <div>Halcom One</div>
+    
+            </a>
+</li>
+                            
+</ul>
+        
+</div>
+    
+    <div class="tab-content">
+                                            <div id="nexuscertificate" class="tab-pane active ">
+                        
+                		                                	<label class="caption  hidden" for="visibleauthentication_type"></label>
+                            	<input class="w-input " id="visibleauthentication_type" type="hidden" placeholder="" autocomplete="off" name="authentication_type" data-name="authentication_type" required="required" autofocus="autofocus" value="nexuscertificate" maxlength="25">
+                        		                                	<label class="caption hidden hidden" for="visiblej_username">Username</label>
+                            	<input class="w-input hidden" id="visiblej_username" type="text" placeholder="Enter your Halcom One username" autocomplete="off" name="j_username" data-name="j_username" required="required" autofocus="autofocus" maxlength="25">
+                        
+    <form action="/MBNK_dev/j_spring_security_check" method="post" name="loginform" autocomplete="off">
+			    	        	            	                <label class="caption  hidden" for="authentication_type"></label>
+	            	            <input class="w-input " id="authentication_type" type="hidden" placeholder="" autocomplete="off" name="authentication_type" data-name="authentication_type" required="required" autofocus="autofocus" value="nexuscertificate" maxlength="25">
+	        	            	                <label class="caption hidden hidden" for="j_username">Username</label>
+	            	            <input class="w-input hidden" id="j_username" type="hidden" placeholder="Enter your Halcom One username" autocomplete="off" name="j_username" data-name="j_username" required="required" autofocus="autofocus" maxlength="25">
+	        	    	    		<button class="w-inline-block button_submit full btn loginbtn " type="button">
+	                                            <div>Login</div>
+                	        	    </button>
+	    			<input type="hidden" name="_csrf_token" value="0f8204cd-189c-403b-99bb-e87989da03ff">
+    </form>
+
+    <a href="https://fep-r3.halcom.local/ebank_multibank_client_selfcareportal-dev/" rel="noopener noreferrer" target="_blank">Register</a>
+            
+</div>
+                                                    <div id="cloudcertificate" class="tab-pane ">
+                        
+                		                                	<label class="caption  hidden" for="visibleauthentication_type"></label>
+                            	<input class="w-input " id="visibleauthentication_type" type="hidden" placeholder="" autocomplete="off" name="authentication_type" data-name="authentication_type" required="required" autofocus="autofocus" value="cloudcertificate" maxlength="25">
+                        		                                	<label class="caption passwordfield hidden" for="visiblej_username">Username</label>
+                            	<input class="w-input passwordfield" id="visiblej_username" type="text" placeholder="Enter your Halcom One username" autocomplete="off" name="j_username" data-name="j_username" required="required" autofocus="autofocus" maxlength="25">
+                        
+    <form action="/MBNK_dev/j_spring_security_check" method="post" name="loginform" autocomplete="off">
+					<input type="hidden" name="cloudSignerPollInterval" value="5000" disabled="">
+
+            
+            <div id="oneSign_login_error" class="tab-pane ">
+                    		<div class="login_body_msg cert_error class java.lang.Object" id="user_messages_plain_container" data-role="message_container">
+		  <div id="" class="login_body_msg cert_error class java.lang.Object alert alert-danger fade in" role="alert">
+                                Username is required              		  </div>
+	</div>
+            
+</div>
+
+			    	        	            	                <label class="caption  hidden" for="authentication_type"></label>
+	            	            <input class="w-input " id="authentication_type" type="hidden" placeholder="" autocomplete="off" name="authentication_type" data-name="authentication_type" required="required" autofocus="autofocus" value="cloudcertificate" maxlength="25">
+	        	            	                <label class="caption passwordfield hidden" for="j_username">Username</label>
+	            	            <input class="w-input passwordfield" id="j_username" type="hidden" placeholder="Enter your Halcom One username" autocomplete="off" name="j_username" data-name="j_username" required="required" autofocus="autofocus" maxlength="25">
+	        	    	    		<button class="w-inline-block button_submit full btn loginbtn " type="button">
+	                                            <div>Login</div>
+                	        	    </button>
+	    			<input type="hidden" name="_csrf_token" value="0f8204cd-189c-403b-99bb-e87989da03ff">
+    </form>
+
+    <a href="https://fep-r3.halcom.local/ebank_multibank_client_selfcareportal-dev/" rel="noopener noreferrer" target="_blank">Register</a>
+            
+</div>
+                        
+</div>
+	
+		
+    </div>   
+
+                <div class="language_links">
+                    			    		                 
+            			<div class="language_link">
+									<a href="/MBNK_dev/auth/login?&amp;authentication_type=nexuscertificate&amp;lang=sl">
+						<img src="/MBNK_dev/static/images/lang_sl.svg" width="40px">
+					</a>
+								<a class="login_language" href="/MBNK_dev/auth/login?&amp;authentication_type=nexuscertificate&amp;lang=sl">Slovenščina</a>
+			</div>
+    	    		                 
+            			<div class="language_link">
+									<a href="/MBNK_dev/auth/login?&amp;authentication_type=nexuscertificate&amp;lang=en">
+						<img src="/MBNK_dev/static/images/lang_en.svg" width="40px">
+					</a>
+								<a class="login_language" href="/MBNK_dev/auth/login?&amp;authentication_type=nexuscertificate&amp;lang=en">English</a>
+			</div>
+    		                </div>
+            </div>
+            	<div id="logout_footer">
+		<div class="login_columns col-lg-4">
+			<a id="contact_us" href="javascript:void(0)">
+				<img src="/MBNK_dev/static/images/contact_circle_ico.svg" width="60" alt="">
+				<div class="login_label">Contact center</div>
+			</a>
+		</div>
+		<div class="login_columns col-lg-4">
+			<a id="supported_banks" href="https://multipay.halcom.si/en/#supportedbanks" rel="noopener noreferrer" target="_blank">
+				<img src="/MBNK_dev/static/images/supported_banks_circle_ico.svg" width="60" alt="">
+				<div class="login_label">Supported banks</div>
+			</a>
+		</div>
+		<div class="login_columns col-lg-4">
+			<a id="how_to_join" href="https://multipay.halcom.si/en/get-started.html" rel="noopener noreferrer" target="_blank">
+				<img src="/MBNK_dev/static/images/how_to_join_circle_ico.svg" width="60" alt="">
+				<div class="login_label">How to join</div>
+			</a>
+		</div>
+	</div>
+        </div>
+    </div>
+</div>
+
+
+	
+        
+    <div class="modal fade" id="contactUsModal" role="dialog" aria-labelledby="exampleModalLabel" data-form-submit-type="submit">
+        <div class="modal-dialog  modal-md ">
+            <div class="modal-content " data-iframe-height="">
+                		
+	 
+	
+    <form autocomplete="false" id="contactUsModalForm" name="$name" data-name="" onsubmit="return false" novalidate="novalidate">
+        
+                			<div class=" input_element_wrapper  hidden">
+		<div class="">
+			<input autocomplete="off" id="tableId" type="hidden" name="tableId" class="input field form-control " value="">
+					</div>
+	</div>
+		        <script>
+			if(typeof $ != 'undefined'){
+				$(document).ready(function () {
+                    $("#tableId").val( $("[name='tableId']").first().val() );
+                })
+			}
+        </script>
+        			    <div class="modal-header">
+
+    <button type="button" class="closeModal" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
+	    <h4 class="modal-title" id="exampleModalLabel">Contact center</h4>
+
+            				
+    
+</div>
+
+			<div class="modal-body ">
+    				<div id="contact_us_content">
+					<a href="tel:+38612003369" class="preventBlockUi">
+						<img src="/MBNK_dev/static/images/contact_ico.svg" height="20">
+						<span>+386 1 200 33 69</span>
+					</a>
+
+					<a href="mailTo:helpdesk@halcom.si" class="preventBlockUi">
+						<img src="/MBNK_dev/static/images/hd_ico.svg" height="20">
+						<span>helpdesk@halcom.si</span>
+					</a>
+
+					<a id="islpronto_url" href="javascript:void(0)">
+						<img src="/MBNK_dev/static/images/chat_ico.svg" height="20">
+						<span>Online chat</span>
+					</a>
+				</div>
+			
+      <div id="modal_messages_container">
+        <div id="modal_messages">
+                    </div>
+    </div>
+</div>
+
+			<div class="modal-footer ">
+                    		    	    		<button id="modalButtonCancel" type="button" class="btn small secondary pull-right hidden-print" data-dismiss="modal">
+    			    			<span>Close</span>
+    		</button>
+						
+</div>
+		
+    </form>
+	
+            </div>
+        </div>
+    </div>
+	
+	
+        
+    <div class="modal fade" id="noActiveAccounts" role="dialog" aria-labelledby="exampleModalLabel" data-form-submit-type="ajax">
+        <div class="modal-dialog  modal-md ">
+            <div class="modal-content " data-iframe-height="">
+                		    <div class="modal-header">
+
+    <button type="button" class="closeModal" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
+	    <h4 class="modal-title" id="exampleModalLabel">No active accounts</h4>
+
+            				
+    
+</div>
+		<div class="modal-body ">
+    			<div>You have no active accounts for MultiPay. Visit MultiPay portal and activate MultiPay channel for your accounts.</div>
+			
+			<a href="https://fep-r3.halcom.local/ebank_multibank_client_selfcareportal-dev/" target="_blank">
+										    	    		<button id="multiPayPortalButton" type="button" class="btn button large primary hidden-print">
+    			    			<span>MultiPay portal</span>
+    		</button>
+						</a>
+		
+      <div id="modal_messages_container">
+        <div id="modal_messages">
+                    </div>
+    </div>
+</div>
+	
+		<div class="modal-footer ">
+    					    	    		<button id="modalButtonCancel" type="button" class="btn small secondary pull-right hidden-print" data-dismiss="modal">
+    			    			<span>Close</span>
+    		</button>
+					
+</div>
+	
+            </div>
+        </div>
+    </div>
+
+				
+        
+    <div class="modal fade" id="nexusErrorModal" role="dialog" aria-labelledby="exampleModalLabel" data-form-submit-type="submit">
+        <div class="modal-dialog  nexus-error-modal modal-lg ">
+            <div class="modal-content modal-no-border" data-iframe-height="">
+                		
+	 
+	
+    <form autocomplete="false" id="j_username" name="$name" data-name="" onsubmit="return false" novalidate="novalidate">
+        
+                			<div class=" input_element_wrapper  hidden">
+		<div class="">
+			<input autocomplete="off" id="tableId" type="hidden" name="tableId" class="input field form-control ">
+					</div>
+	</div>
+		        <script>
+			if(typeof $ != 'undefined'){
+				$(document).ready(function () {
+                    $("#tableId").val( $("[name='tableId']").first().val() );
+                })
+			}
+        </script>
+        			    <div class="modal-header">
+
+    <button type="button" class="closeModal" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
+	    <h4 class="modal-title" id="exampleModalLabel">Signing interrupted</h4>
+
+                    <p class="modal-description">Login request was not signed. This error happened because one of the reasons listed below:</p>
+						
+    
+</div>
+			<div class="modal-body ">
+    				<span>1. "Nexus Personal Plugout" have to be enabled for signing.</span><br><br>
+				<span>2. The latest version of Nexus Personal is required to sign the documents.</span><br><br>
+
+				<div class="col-md-12">
+					<div class="col-md-4">
+						<div class="browser-name">Chrome</div>
+						<img src="/MBNK_dev/static/images/nexus_error_chrome_en.png">
+					</div>
+					<div class="col-md-4">
+						<div class="browser-name">Edge</div>
+						<img src="/MBNK_dev/static/images/nexus_error_IE_en.png">
+					</div>
+					<div class="col-md-4">
+						<div class="browser-name">Firefox</div>
+						<img src="/MBNK_dev/static/images/nexus_error_firefox_en.png">
+					</div>
+				</div>
+				<span>3. You have to install/update application Nexus Personal in order to successfully sign requests.</span><br><br>
+				<div>
+					                		    	    		<a id="buttonNexusFtp" class="btn small primary hidden-print" href="https://www.halcom.si/si/nadgradnja/" target="_blank">
+    							<span>Download program</span>
+			</a>
+							</div>
+				<br>
+				<span>4.</span>
+				<span class="macos_text_with_picture">macOS</span>
+				<span>users use the Mozilla Firefox web browser according to the</span>
+				<a class="macos_instructions_link" target="_blank" href="https://support.halcom.com/sl-en/faqs/mac-multipay-en/">Nexus Personal - Plugout installation instructions.</a><br><br>
+			
+      <div id="modal_messages_container">
+        <div id="modal_messages">
+                    </div>
+    </div>
+</div>
+			<div class="modal-footer ">
+    				<div class="buttons">
+					                		    	    		<button id="modalButtonCancel" type="button" class="btn close_button small secondary pull-right hidden-print" data-dismiss="modal">
+    			    			<span>Close</span>
+    		</button>
+							</div>
+			
+</div>
+		
+    </form>
+	
+            </div>
+        </div>
+    </div>
+	
+
+        
+    
+
+      	<script type="text/javascript" src="/MBNK_dev/static/components/jquery/dist/jquery.min.js"></script>
+      	<script type="text/javascript" src="/MBNK_dev/static/components/bootstrap/dist/js/bootstrap.js"></script>
+      	<script type="text/javascript" src="/MBNK_dev/static/components/bootstrap-select/js/bootstrap-select.js"></script>
+        <script type="application/javascript">
+            $(document).ready(function () {
+                var app_url = '/MBNK_dev';
+                var options = {
+                    aSep: '.',
+                    aDec: ',',
+                    gridFloatBreakPoint: '991',
+                    isRtl: false
+                };
+
+                utils.localized_msgs = $.parseJSON("{\"common.error.msg.future_date\":\"Date is in the future!\",\"aggregatedview.graph.label.booked_balance\":\"aggregatedview.graph.label.booked_balance\",\"alerts.save_alerts.error.percentage\":\"alerts.save_alerts.error.percentage\",\"payments.validator.error_msg\":\"Please correct all marked fields.\",\"hybrid.requestcenter.gdpr.request.leave.button.leave\":\"hybrid.requestcenter.gdpr.request.leave.button.leave\",\"datepicker.monthname.august\":\"August\",\"datepicker.tooltip.decrement_second\":\"Decrement second\",\"alerts.save_alerts.error.positive_numbers\":\"alerts.save_alerts.error.positive_numbers\",\"forex.forexhistory.chart.weekdays\":\"forex.forexhistory.chart.weekdays\",\"common.label.mandatory_field\":\"*Mandatory field\",\"payments.payment_wizzard_modal.bic_format_invalid\":\"Bic format is invalid\",\"edocuments.import.document_type.not_alowed.edocument\":\"edocuments.import.document_type.not_alowed.edocument\",\"datepicker.tooltip.prev_decade\":\"Previous decade\",\"nexus_error.label.request_expired\":\"Request for signing has expired. Please sign again.\",\"accounts.details.graph.no_permissions\":\"accounts.details.graph.no_permissions\",\"payments.ownacc.form.no_credit_account_macth.error.msg\":\"Debit and credit accounts must be in the same currency. Please select debit and credit accounts in the same currency.\",\"datepicker.tooltip.select_time\":\"Select time\",\"hybrid.cards.card_account_statements.common.label.date\":\"hybrid.cards.card_account_statements.common.label.date\",\"cdm.payments.template.edit.error.message.name_already_exists\":\"cdm.payments.template.edit.error.message.name_already_exists\",\"common.label.hide_other_data\":\"Hide other data\",\"logout.content.success_msg.due_inactivity\":\"You were automatically logged out due to inactivity.\",\"datepicker.dayname.saturday.short\":\"Sat\",\"forex.forexhistory.chart.title_appendix\":\"forex.forexhistory.chart.title_appendix\",\"hybrid.requestcenter.gdpr.request.common.button.ok\":\"OK\",\"payments.check_account_message.account_not_found\":\"Credit account not found in the registry. Manually enter creditor data to proceed with specified account. \\n\",\"forex.forexhistory.chart.label.transfer_sell\":\"forex.forexhistory.chart.label.transfer_sell\",\"common.filter.daterange.apply\":\"Apply\",\"login.login.message.disabled_browser_cookies\":\"Cookies are not enabled on your browser. Please enable cookies in your browser preferences to continue.\",\"payments.sdd.sent.cancelaction.refusal_reason_mandatory\":\"Reason is mandatory. Please select it before proceeding.\",\"common.msgs.infinite_scroll\":\"Table data has changed. Please refresh the page.\",\"login.login.label.cloud_certificate_error_general\":\"Log in via Halcom One is currently not possible, please try later.\",\"login.login.label.cloud_certificate_error_timeout\":\"Halcom One has reported a timeout\",\"export.pdf.account.transaction.confirmation\":\"Transaction\",\"common.button.close\":\"Close\",\"payments.authentication_status.signature_not_required\":\"Batch was already signed by someone else.\",\"export.pdf.account.statement.statement\":\"Statement\",\"filter.date_from_to.error.msg\":\"Date \\\"From\\\" should be earlier than date \\\"To\\\".\",\"forex.converter.label.no_data.message\":\"forex.converter.label.no_data.message\",\"generic_action.save\":\"Save\",\"datepicker.tooltip.next_month\":\"Next month\",\"login_form.error.ie_version\":\"You are using a browser version the application no longer supports. Some features may not work correctly. To avoid inconveniences, upgrade to a later browser version.\",\"datepicker.dayname.saturday\":\"Saturday\",\"session.error.invalid\":\"Your session has expired. Please login again.\",\"datepicker.monthname.june.short\":\"June\",\"datepicker.tooltip.next_year\":\"Next year\",\"payments.pooredo.enter_clients_qatari_id\":\"Please enter Qatari ID first.\",\"alerts.save_alerts.error.general_error_msg\":\"alerts.save_alerts.error.general_error_msg\",\"payments.authorization_cloud_modal.message.wait_for_signature\":\"Please open Halcom One and confirm the signature to continue.\",\"alerts.save_contact_info.error_mobile\":\"alerts.save_contact_info.error_mobile\",\"datepicker.today.button\":\"Today\",\"forex.forexhistory.chart.months\":\"forex.forexhistory.chart.months\",\"datepicker.tooltip.prev_century\":\"Previous century\",\"forex.forexhistory.chart.label.cash_sell\":\"forex.forexhistory.chart.label.cash_sell\",\"login.login.label.nexus_certificate\":\"Confirm login request with Nexus Personal - Plugout application.\",\"accounts.details.graph.title\":\"Balance history for account\",\"self_admin.limits.error\":\"self_admin.limits.error\",\"hybrid.requestcenter.gdpr.request.modal.channels.not_mandatory\":\"hybrid.requestcenter.gdpr.request.modal.channels.not_mandatory\",\"esubscriptions.details.common.label.show_other_data\":\"Show other data\",\"hybrid.payments.form.button.hide_recipient\":\"Hide additional data\",\"datepicker.monthname.march\":\"March\",\"profile.modal.onlinechat.unavailable\":\"Online chat is not available at the moment.\",\"proxsign.error_5\":\"Certificate problem or unknown error\",\"alerts.list.option.receiving_alerts_edit\":\"alerts.list.option.receiving_alerts_edit\",\"invalid.format.einvoice.debtor.bic\":\"Invalid format for creditor BIC code.\",\"edocuments.import.document_type.not_alowed.einvoice\":\"edocuments.import.document_type.not_alowed.einvoice\",\"proxsign.error_4\":\"Error while signing.\",\"common.table.header.total\":\"Total\",\"datepicker.monthname.august.short\":\"Aug\",\"cards.card_account_statements.alert.date_out_of_range\":\"cards.card_account_statements.alert.date_out_of_range\",\"payments.authorization_cloud_modal.error.expired\":\"Halcom One signing request has expired.\",\"datepicker.monthname.june\":\"June\",\"datepicker.monthname.november\":\"November\",\"communicationcenter.requests.common.label.hide_other_data\":\"Hide other data\",\"datepicker.monthname.november.short\":\"Nov\",\"common.message.error.permission.label\":\"You do not have permission for this action. Contact your bank administrator.\",\"login.login.message.username_required_error\":\"Username is required\",\"eforms.validation.invalid.error\":\"Please correct this value\",\"accounts.details.graph.no_data\":\"No balance history data.\",\"hybrid.payments.form.button.show_recipient-data\":\"Show additional data\",\"hybrid.payments.form.button.show_issuer\":\"Show additional data\",\"forex.forexlist.table.head.transfer_central_sell\":\"forex.forexlist.table.head.transfer_central_sell\",\"datepicker.monthname.july\":\"July\",\"common.messages.system.more.one\":\"common.messages.system.more.one\",\"bonds.bonddetails.label.chart.no_available\":\"bonds.bonddetails.label.chart.no_available\",\"alerts.save_contact_info.error\":\"alerts.save_contact_info.error\",\"payments.authorization_cloud_modal.message.cancel_signature\":\"Cancel\",\"datepicker.tooltip.select_year\":\"Select year\",\"hybrid.payments.form.button.show_recipient\":\"Show additional data\",\"payments.error.check_content.errors_found\":\"Please review errors by hovering over the marked fields. Correct all the marked fields and click Save to continue.\",\"hybrid.requestcenter.gdpr.request.modal.missing_channels\":\"hybrid.requestcenter.gdpr.request.modal.missing_channels\",\"forex.forexhistory.chart.label.middle_rate\":\"forex.forexhistory.chart.label.middle_rate\",\"alerts.save_contact_info.email.wrong_format\":\"alerts.save_contact_info.email.wrong_format\",\"hybrid.payments.form.button.hide_einvoice-details\":\"Hide e-invoice details\",\"hybrid.payments.form.button.hide_pofor-details\":\"Hide payment details\",\"common.autocomplete.empty\":\"No results found\",\"hybrid.requestcenter.gdpr.request.leave.button.continue\":\"hybrid.requestcenter.gdpr.request.leave.button.continue\",\"datepicker.tooltip.increment_hour\":\"Increment hour\",\"datepicker.dayname.thursday\":\"Thursday\",\"datepicker.monthname.july.short\":\"July\",\"alerts.save_contact_info.success\":\"alerts.save_contact_info.success\",\"forex.forexhistory.chart.label.no_data\":\"forex.forexhistory.chart.label.no_data\",\"hybrid.common.button.ok\":\"OK\",\"hybrid.payments.form.button.hide_issuer\":\"Hide additional data\",\"login.login.label.cloud_certificate_title\":\"Please open Halcom One and confirm the signature to continue.\",\"common.label.message.file_download_error\":\"File download failed.\",\"accounts.details.manage_account.rename.error\":\"Something went wrong while renaming the account.\",\"forex.forexhistory.chart.label.transfer_buy\":\"forex.forexhistory.chart.label.transfer_buy\",\"einvoices.reject.details.common.label.show_other_data\":\"Show other data\",\"filter.date_wrong_format.error.msg\":\"Wrong date format.\",\"hybrid.common.title.alert\":\"Alert\",\"login.login.message.password_required_error\":\"Password is required\",\"einvoices.reject.details.common.label.hide_other_data\":\"Hide other data\",\"opcvm.opcvmdetails.label.chart.no_available\":\"opcvm.opcvmdetails.label.chart.no_available\",\"forex.forexhistory.chart.shortMonths\":\"forex.forexhistory.chart.shortMonths\",\"stocks.stockdetails.label.chart.no_available\":\"stocks.stockdetails.label.chart.no_available\",\"common.messages.system.more.prefix\":\"common.messages.system.more.prefix\",\"datepicker.monthname.october.short\":\"Oct\",\"forex.forexlist.table.head.transfer_central_buy\":\"forex.forexlist.table.head.transfer_central_buy\",\"logout.overview.button.description\":\"You have been signed out successfully.\",\"filter.amount_wrong_format.error.msg\":\"Wrong amount parameters.\",\"multibank.import_packet_modal.title.import_failed\":\"Import failed\",\"common.msgs.please_wait\":\"Please wait...\",\"payments.payment_wizzard_modal.iban_format_invalid\":\"IBAN format is invalid\",\"datepicker.dayname.friday\":\"Friday\",\"common.filter.daterange.clear\":\"Clear\",\"datepicker.tooltip.decrement_hour\":\"Decrement hour\",\"datepicker.monthname.may\":\"May\",\"hybrid.accounts.transactions_list.link.confirmation\":\"Confirmation\",\"payments.form.common.label.hide_other_data\":\"Hide additional data\",\"accounts.statements_download_modal.alert.dateOutOfRange\":\"Date range you selected exceeds maximum allowed 31 days.\",\"hybrid.payments.form.button.hide_recipient-data\":\"Hide additional data\",\"datepicker.tooltip.next_century\":\"Next century\",\"help.enter_keyword_or_phrase\":\"For search enter a keyword or a phrase.\",\"hybrid.cards.card_account_statements.label.instructions\":\"hybrid.cards.card_account_statements.label.instructions\",\"payments.authorization_cloud_modal.cancelation_error\":\"There was an error while canceling Halcom One request.\",\"datepicker.tooltip.select_decade\":\"Select decade\",\"payments.check_account_message.private_person\":\"Entered account is valid account of a private person. Please manually enter creditor data in the payment form.\",\"hybrid.requestcenter.gdpr.request.modal.cant_leave\":\"hybrid.requestcenter.gdpr.request.modal.cant_leave\",\"payments.form.msg.error.non_working_execution_date\":\"Date is not a workday!\",\"payments.form.field.ooredoo_service_number\":\"Ooredoo service number\",\"payments.authorization_cloud_modal.error.timeout\":\"Halcom One signing timeout\",\"datepicker.tooltip.pick_hour\":\"Pick hour\",\"forex.forexlist.table.head.effective_sell_rate\":\"forex.forexlist.table.head.effective_sell_rate\",\"datepicker.tooltip.prev_year\":\"Previous year\",\"common.message.date_less_than\":\"Date cannot be less than {0}.\",\"import.import_controller.msg.error.system_error\":\"System error while importing data from file.\",\"communicationcenter.requests.common.label.show_other_data\":\"Show other data\",\"hybrid.common.label.optional_field\":\"(optional)\",\"datepicker.dayname.friday.short\":\"Fri\",\"datepicker.dayname.tuesday.short\":\"Tue\",\"alerts.save_contact_info.no_delivery_channel\":\"alerts.save_contact_info.no_delivery_channel\",\"datepicker.dayname.monday.short\":\"Mon\",\"com.halcom.ng.dictionary.DicMessageContentType.PLAIN_TEXT\":\"Message\",\"misys_trade_portal.redirect.fail\":\"misys_trade_portal.redirect.fail\",\"datepicker.monthname.january\":\"January\",\"common.filter.quick.custom_range\":\"Custom range\",\"datepicker.dayname.sunday\":\"Sunday\",\"common.alert.close\":\"close X\",\"login.login.label.cloud_certificate_cancel\":\"Cancel\",\"login.login.label.cloud_certificate_error_expired\":\"Halcom One signing request has expired.\",\"accounts.list.table.header.main_account.success\":\"The Set as main account operation did not complete successfully. Please try again.\",\"export.pdf.generic\":\"Document\",\"hybrid.requestcenter.gdpr.request.leave.message\":\"hybrid.requestcenter.gdpr.request.leave.message\",\"error.message.multitab.disabled\":\"You can only use the MultiPay web in one tab at a time.\",\"datepicker.monthname.april.short\":\"Apr\",\"proxsign.license_error\":\"SETCCE proXSign license problem or unknown error\",\"common.message.execution_date_updated_to\":\"You made your payment after payment cut-off time and will be processed the next business day ({0}).\",\"packets.for_authorization.move_to_og.failed\":\"Move packet to prepare failed.\",\"einvoices.sign_einvoice.message.unable_to_sign\":\"einvoices.sign_einvoice.message.unable_to_sign\",\"bills.validation.mandatory.error\":\"bills.validation.mandatory.error\",\"common.filter.quick.0d\":\"1 day\",\"profile.modal.onlinechat.working_hours\":\"Working time 08.00 - 16.30\",\"payments.payment_form.tax_authority_error.service_error\":\"Error retrieving tax authority data.\",\"datepicker.dayname.thursday.short\":\"Thu\",\"common.messages.system\":\"Number of unread important messages:\",\"einvoices.reject.form.common.label.show_other_data\":\"Show other data\",\"login.error.password.compare_new_and_confirm\":\"Passwords do not match\",\"datepicker.tooltip.pick_minute\":\"Pick minute\",\"datepicker.dayname.tuesday\":\"Tuesday\",\"payments.form.msg.error.utility_number_exists\":\"Utility number already exists!\",\"accounts.details.graph.account_balance\":\"ACCOUNT BALANCE\",\"datepicker.monthname.october\":\"October\",\"datepicker.monthname.december\":\"December\",\"esubscriptions.details.common.label.hide_other_data\":\"Hide other data\",\"forex.forexhistory.chart.subtitle_prependix\":\"forex.forexhistory.chart.subtitle_prependix\",\"datepicker.tooltip.increment_second\":\"Increment second\",\"alerts.list.option.receiving_alerts.mobile_phone\":\"alerts.list.option.receiving_alerts.mobile_phone\",\"datepicker.dayname.monday\":\"Monday\",\"forex.forexhistory.chart.y_axis.title.part1\":\"forex.forexhistory.chart.y_axis.title.part1\",\"datepicker.tooltip.select_month\":\"Select month\",\"forex.forexhistory.chart.y_axis.title.part2\":\"forex.forexhistory.chart.y_axis.title.part2\",\"login.login.label.nexus_certificate_cancel\":\"Cancel\",\"payments.authorization_cloud_modal.error.rejected\":\"Request was rejected by the user in Halcom One\",\"common.conversion.not_possible\":\"Conversion not possible\",\"datepicker.dayname.wednesday\":\"Wednesday\",\"accounts.details.graph.series_name\":\"Balance\",\"communicationcenter.requests.auth_status.error\":\"communicationcenter.requests.auth_status.error\",\"hybrid.payments.form.button.hide_pofor-intermediary\":\"Hide intermediary bank\",\"login.login.label.cloud_certificate_error_rejected\":\"Request was rejected by the user in Halcom One\",\"common.ajax.fetch_error\":\"Connection failed or your session has expired.\",\"hybrid.payments.form.button.show_pofor-intermediary\":\"Show intermediary bank\",\"alerts.save_contact_info.error_email\":\"alerts.save_contact_info.error_email\",\"payments.form.msg.error.utility_number_nickname_required\":\"Utility number and nickname fields are required!\",\"datepicker.tooltip.next_decade\":\"Next decade\",\"alerts.list.option.receiving_alerts.email_edit\":\"alerts.list.option.receiving_alerts.email_edit\",\"alerts.save_alerts.success\":\"alerts.save_alerts.success\",\"hybrid.payments.form.button.hide_issuer-data\":\"Hide additional data\",\"packets.step1.mp.debtor_reference_mandatory\":\"Debtor reference is mandatory.\",\"alerts.save_contact_info.phone.wrong_format\":\"alerts.save_contact_info.phone.wrong_format\",\"bills.validation.min_length.error\":\"bills.validation.min_length.error\",\"payments.form.common.label.hide_intermediary_bank\":\"Hide intermediary bank\",\"login.login.label.cloud_certificate_cancelation_error\":\"There was an error while canceling Halcom One request.\",\"hybrid.payments.form.button.show_issuer-data\":\"Show additional data\",\"common.message.invalid_date\":\"Invalid date\",\"alerts.save_alerts.error\":\"alerts.save_alerts.error\",\"payments.form.msg.error.invalid_execution_date\":\"Invalid date format!\",\"common.label.show_other_data\":\"Show other data\",\"common.message.execution_date_is_les_than_expected\":\"Execution date is less than expected\",\"datepicker.tooltip.today\":\"Today\",\"payments.ownacc.form.no_account_macth.error.msg\":\"You are missing appropriate debit account for chosen credit account. Please select another credit account.\",\"com.halcom.ng.dictionary.DicMessageContentType.FORM\":\"Request\",\"datepicker.tooltip.clear\":\"Clear\",\"payments.form.common.label.show_other_data\":\"Show additional data\",\"datepicker.tooltip.decrement_minute\":\"Decrement minute\",\"einvoices.reject.form.common.label.hide_other_data\":\"Hide other data\",\"alerts.list.option.receiving_alerts_readonly\":\"alerts.list.option.receiving_alerts_readonly\",\"datepicker.tooltip.toggle_period\":\"Toggle period\",\"forex.forexlist.table.head.effective_buy_rate\":\"forex.forexlist.table.head.effective_buy_rate\",\"hybrid.payments.form.button.show_pofor-details\":\"Show payment details\",\"payments.template.edit.error.message.name_already_exists\":\"payments.template.edit.error.message.name_already_exists\",\"datepicker.monthname.may.short\":\"May\",\"alerts.list.option.receiving_alerts.email\":\"alerts.list.option.receiving_alerts.email\",\"forex.forexhistory.chart.label.cash_buy\":\"forex.forexhistory.chart.label.cash_buy\",\"common.message.date_more_than\":\"Date cannot be more than {0}.\",\"alerts.save_alerts.error.negative_numbers\":\"alerts.save_alerts.error.negative_numbers\",\"datepicker.dayname.wednesday.short\":\"Wed\",\"datepicker.tooltip.pick_second\":\"Pick second\",\"common.filter.daterange.from\":\"From\",\"payments.check_account_message.invalid_iban\":\"Invalid credit account IBAN.\",\"forex.forexhistory.chart.subtitle_appendix\":\"forex.forexhistory.chart.subtitle_appendix\",\"alerts.list.option.receiving_alerts.mobile_phone_edit\":\"alerts.list.option.receiving_alerts.mobile_phone_edit\",\"datepicker.monthname.february.short\":\"Feb\",\"datepicker.monthname.march.short\":\"Mar\",\"hybrid.base.system_controller.msg.error.no_permissions\":\"The user is missing required permissions.\",\"datepicker.monthname.april\":\"April\",\"common.button.next\":\"Next\",\"hybrid.requestcenter.gdpr.request.modal.channels.not_selectable\":\"hybrid.requestcenter.gdpr.request.modal.channels.not_selectable\",\"other.otherdetails.label.chart.no_available\":\"No data available for the selected period of time\",\"datepicker.tooltip.increment_minute\":\"Increment minute\",\"generic_action.edit\":\"Edit\",\"datepicker.tooltip.close\":\"Close\",\"hybrid.common.title.info\":\"Info\",\"forex.forexhistory.chart.reset_zoom.title\":\"forex.forexhistory.chart.reset_zoom.title\",\"common.msgs.loading_data\":\"Loading data\",\"common.filter.no_results_found\":\"No results found\",\"payments.step3.save_template.success.msg\":\"Template saved successfully\",\"datepicker.monthname.february\":\"February\",\"datepicker.monthname.september\":\"September\",\"payments.form.message.account_restrictions_error\":\"For selected debit account you don\\u0027t have any credit accounts according to the account restrictions matrix.\",\"datepicker.monthname.december.short\":\"Dec\",\"forex.forexhistory.chart.reset_zoom.tooltip\":\"forex.forexhistory.chart.reset_zoom.tooltip\",\"payments.form.common.label.show_intermediary_bank\":\"Show intermediary bank\",\"common.filter.daterange.to\":\"To\",\"hybrid.payments.form.button.show_einvoice-details\":\"Show e-invoice details\",\"login.login.message.username_password_required_error\":\"Username and password are required\",\"payments.info.auth_data_fetch_failed\":\"Error while retrieving authentication data.\",\"packets.details.message.batch_expired\":\"Batch expired. Value date of one or several payments is in the past.\",\"payments.form.field.ooredoo_account_number\":\"Ooredoo account number\",\"common.label.optional_field\":\"(optional)\",\"accounts.controller.account_rename.msg.successfully_renamed\":\"The account was successfully renamed.\",\"forex.forexhistory.chart.no_data\":\"forex.forexhistory.chart.no_data\",\"datepicker.monthname.january.short\":\"Jan\",\"common.messages.system.more\":\"common.messages.system.more\",\"datepicker.monthname.september.short\":\"Sep\",\"hybrid.common.title.error\":\"Error\",\"common.message.error.id.label\":\"ID:\",\"payments.authorization_cloud_modal.error.general\":\"Unknown error in Halcom One\",\"datepicker.tooltip.prev_month\":\"Previous month\",\"datepicker.dayname.sunday.short\":\"Sun\",\"payments.form.msg.error.past_execution_date\":\"*Date is in the past\"}");
+                utils.init(app_url, null, options);
+				
+				
+				if($("body").hasClass('login')){
+					if(!$(".login-menu-wrapper .tab.active").is(":visible")){
+						$(".login-menu-wrapper .tab:visible:first a").trigger('click');
+					}
+				}
+				
+				$(window).on('resize', function(){
+                  if($("body").hasClass('login')){
+    					if(!$(".login-menu-wrapper .tab.active").is(":visible")){
+    						$(".login-menu-wrapper .tab:visible:first a").trigger('click');
+    					}
+    				}
+                });
+				
+				
+            });
+        </script>
+    		  		  	   		   				        	<script type="application/javascript" src="/MBNK_dev/static//script/ebank/personal.min.js"></script>
+        	<script type="application/javascript" src="/MBNK_dev/static//script/ebank/jquery.nexussigner.js"></script>
+        	<script type="application/javascript" src="/MBNK_dev/static//script/ebank/messages.js"></script>
+        	<script type="application/javascript" src="/MBNK_dev/static//script/ebank/jquery.blockUI.js"></script>
+        	<script type="application/javascript" src="/MBNK_dev/static//script/ebank/base.js"></script>
+        	<script type="application/javascript" src="/MBNK_dev/static//script/ebank/login.js"></script>
+        	<script type="application/javascript" src="/MBNK_dev/static//script/ebank/logout.js"></script>
+    		                    <script type="text/javascript">
+			$(document).ready(function() {
+	    		setTimeout( function(){
+	    			$("[data-autofade='true']").alert("close");
+	    		}, 5000);
+	    			
+	    		$("[data-role=message_container]" ).change(function() {
+	            	alert("Handler for .change() called.");
+	            });
+				$("[data-role=message_container] .alert").size();
+			});	
+    	</script>
+	
+            	<script type="text/javascript">
+        $(document).ready(function() {
+        	$(".forgotten_link").click(function(e) {
+           		e.preventDefault();
+                var modalId = $(this).data("modal");
+                $("#" + modalId).modal('show');
+            });
+        });
+    </script>
+    
+            		<script type="text/javascript">
+			$(".closeModal").click(function(){
+				modalHelper.hide();
+			});
+		</script>
+	
+                <script type="text/javascript">
+        $(document).ready(function () {
+            utils.blockUI();
+
+            const temp = window.onbeforeunload;
+            window.onbeforeunload = undefined;
+
+            $("#nexusSignatureCancel").click(function () {
+                window.onbeforeunload = temp;
+            });
+
+            $(document)
+                    .nexusSigner()
+                    .auth(
+                            "TG9naW4gcmVxdWVzdCBvbiAyMS4wMi4yMDIzIGF0IDE1OjI3OjEz",
+                            "1a8a9ceb-0713-43ad-b843-e3e1e632c5ac",
+                            "60",
+                            function(success, signature) {
+                                window.onbeforeunload = temp;
+
+                                if (!success) {
+                                    utils.unblockUI();
+
+                                    if (signature !== "8002") {
+                                        $('#nexusErrorModal').modal('show');
+                                    }
+
+                                    return;
+                                }
+
+                                $('#j_username').val(signature);
+
+                                var loginForm = $(".tab-content").find(".tab-pane.active").find('form[name="loginform"]');
+                                loginForm.submit();
+
+                            }
+                    );
+        });
+    </script>
+    
+                <script type="text/javascript">
+        $(document).ready(function() {
+            $('#contact_us')[0].onclick = function() {
+                $('#contactUsModal').modal('show');
+            };
+            
+            			
+            var chatLink = $('#islpronto_url')[0];
+            var helpDeskEnabled = false;
+                            helpDeskEnabled = true;
+            
+            if(helpDeskEnabled && ISLProntoInfo.supporters > 0) {
+                chatLink.onclick = ISLProntoInfo.onchat;
+            } else {
+                chatLink.onclick = function() {
+                    var msg =  utils.localized_msgs["profile.modal.onlinechat.unavailable"];
+                    messages.add("info", "", msg, true);
+                };
+            }
+        });
+    </script>
+    <script type="text/javascript" src="https://islpronto.islonline.net/live/islpronto/public/chat_info.js?d=Halcom&amp;filter=halcom-lj&amp;lang=sl&amp;chat_width=550&amp;chat_height=500"></script>
+
+    	
+<div class="blockUI" style="display:none"></div><div class="blockUI blockOverlay" style="z-index: 20000; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(0, 0, 0); opacity: 0.6; cursor: wait; position: fixed;"></div><div class="blockUI blockMsg blockPage" style="z-index: 20011; position: fixed; padding: 30px; margin: 0px; width: 30%; top: 40%; left: 35%; text-align: center; color: rgb(255, 255, 255); border: none; background-color: rgba(0, 0, 0, 0.5); cursor: wait; border-radius: 3px; font-size: 16px;">Confirm login request with Nexus Personal - Plugout application.<br><a href="#" id="nexusSignatureCancel">Cancel</a></div><object id="signer2"></object></body></html>
